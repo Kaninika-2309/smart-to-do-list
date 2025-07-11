@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>TaskBoard</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">My Tasks</a></li>
+          <li><a href="#">Today</a></li>
+          <li><a href="#">Upcoming</a></li>
+          <li><a href="#">Completed</a></li>
+        </ul>
+      </nav>
+      <button id="toggle-theme">Toggle Theme</button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Smart To-Do List</h1>
+        <div class="controls">
+          <select id="sort-tasks">
+            <option value="default">Sort By</option>
+            <option value="priority">Priority</option>
+            <option value="date">Due Date</option>
+          </select>
+        </div>
+      </header>
+
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task title..." required />
+        <textarea id="task-notes" placeholder="Add notes (optional)..."></textarea>
+        <input type="date" id="task-start" />
+        <input type="date" id="task-date" />
+        <select id="task-priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input type="text" id="task-tags" placeholder="#tags separated by commas" />
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="filters">
+        <button data-filter="all" class="filter active">All</button>
+        <button data-filter="pending" class="filter">Pending</button>
+        <button data-filter="completed" class="filter">Completed</button>
+      </div>
+
+      <div class="progress">
+        <p id="task-progress">0 of 0 tasks completed</p>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <div id="quote-box"></div>
+
+      <footer>
+        <p>&copy; 2025 Your Name • Frontend Dev</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
